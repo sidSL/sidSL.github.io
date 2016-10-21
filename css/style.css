@@ -1,0 +1,99 @@
+body{
+  font-family:Arial;
+  background: black;
+}
+.modal-header{
+  border-bottom: none;
+}
+.modal-footer{
+  border-top: none;
+}
+.modal-content{
+  background-color: rgb(248, 248, 248);
+}
+.modal-title{
+  color:rgb(99, 178, 233);
+  font-size:41px;
+}
+input[type="checkbox"]{
+  display:none;
+}
+input[type="checkbox"] + label:before {
+  border: 2px solid  rgb(11, 154, 215);
+  border-radius: 4px;
+  content: "\00a0";
+  display: inline-block;
+  font: 17px/1em sans-serif;
+  height: 16px;
+  margin: 0 .25em 0 0;
+  padding: 0;
+  vertical-align: top;
+  width: 16px;
+}
+input[type="checkbox"]:checked + label:before {
+  background: rgb(11, 154, 215);
+  color: #fff;
+  content: "\2713";
+  text-align: center;
+}
+input[type="checkbox"]:checked + label:after {
+  font-weight: bold;
+}
+label{
+  font-size: smaller;
+  font-weight : 100;
+}
+
+.modal-body{
+  padding-left:31px;
+}
+
+.form-label{
+  font-weight: bold;
+}
+
+.select-holder{
+  padding-left:0px;
+}
+.select-dd{
+  width:100%;
+  -webkit-appearance: none;
+  background-image: url(../img/br_down.png);
+  background-color:rgb(221,221,221);
+  padding-left:0px;
+  background-repeat:no-repeat;
+  background-position:99% 50%;
+}
+ul{
+  padding:0px;
+}
+.optionLi{
+  list-style:none;
+}
+.white-bg{
+    background-color:#fff !important;
+}
+.highlight{
+  background-color:#ddd;
+}
+.ok-btn{
+  background-color: rgb(41, 161, 230);
+  color: #fff;
+}
+.close-btn{
+  background-color: rgb(222, 222, 222);
+  color: #000;
+}
+.has-error{
+  color:red;
+  font-size:12px;
+}
+
+.button {
+  margin:auto;
+  display:block;
+  margin-top: 16%;
+  /*top: 50%;
+left: 50%;
+position: absolute;*/
+}

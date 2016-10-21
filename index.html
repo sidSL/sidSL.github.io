@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Dialog</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href ="node_modules/bootstrap/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+  </head>
+  <body ng-app="dialogApp" ng-controller="modalCtrl">
+    <!-- Trigger the modal with a button -->
+      <button class="button btn btn-xl" type="button" class="btn btn-info btn-lg" ng-click="openModal()">Click Me</button>
+  <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog" ng-if="isModalShown">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" ng-click="closeModal()">&times;</button>
+            <h4 class="modal-title">Select an Employee</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <input type="checkbox" id="welcomeEmail"/>
+              <label for="welcomeEmail" >Send welcome email to employee<label>
+            </div>
+            <ng-form name="forms.myForm">
+
+              <div class="row">
+                <label for="teamSelect"  class="form-label">Select a Team in the organization</label>
+              </div>
+              <div class="row">
+                <div class="col-sm-11 select-holder">
+                   <auto-complete name="teamDD" default-value="model.teamName" options="model.teams" placeholder="Select a Team"></auto-complete>
+                  </div>
+            </div>
+            <div class="row">
+              <label for="employeeSelect" class="form-label">Select an employee</label>
+            </div>
+            <div class="row">
+              <div class="col-sm-11 select-holder">
+                <auto-complete name="empDD" default-value="model.empName" options="model.employees[model.teamName]" placeholder="Select an Employee"></auto-complete>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-11">
+                <div class="has-error" ng-show="validationDone&&!forms.myForm.empDD.$valid">
+                  The typed employee name doesn't match the data.
+                </div>
+              </div>
+            </div>
+          </ng-form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default close-btn" ng-click="closeModal()">Close</button>
+            <button type="button" class="btn btn-default ok-btn" ng-click="ok()">OK</button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/angular-bootstrap-npm/dist/angular-bootstrap.js"></script>
+    <script src="node_modules/angular-bootstrap-npm/dist/angular-bootstrap-tpls.js"></script>
+    <!--App Code -->
+    <script src="js/main.js"></script>
+    <script src="js/controllers/modalCtrl.js"></script>
+    <script src="js/directives/autoComplete.js"></script>
+    <!--Templates-->
+
+  </body>
+</html>
