@@ -90,6 +90,9 @@ ul{
   color:red;
   font-size:12px;
 }
+.error-wrap{
+  padding-right: 0px;
+}
 
 .button {
   margin:auto;
@@ -99,9 +102,10 @@ ul{
 left: 50%;
 position: absolute;*/
 }
-.modal-footer{
-  padding-right: 63px;
+.btn-wrapper{
+  padding-right: 0px;
 }
 .footer-btn{
+  width:100%;
   border-radius:0px;
 }
